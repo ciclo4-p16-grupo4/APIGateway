@@ -21,7 +21,7 @@ const likesUserTypeDefs = gql`
 
    extend type Mutation {
       createLike(like: likeuserInput!): likeuser
-      deleteLike(likeId: Int!): String!
+      deleteLike(likeId: String!): String
    }
 `;
 module.exports = likesUserTypeDefs;
