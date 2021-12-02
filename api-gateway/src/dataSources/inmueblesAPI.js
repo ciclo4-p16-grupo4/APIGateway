@@ -3,8 +3,8 @@ const serverConfig = require('../server');
 
 class InmuebleApi extends RESTDataSource {
     constructor() {
-        super()
-        this.baseURL = serverConfig.inmuebles_api_url
+        super();
+        this.baseURL = serverConfig.inmuebles_api_url;
     }
 
     async getInmueble(id) {
@@ -32,4 +32,4 @@ class InmuebleApi extends RESTDataSource {
     }
 }
 
-module.exports = InmuebleApi
+module.exports = InmuebleApi;

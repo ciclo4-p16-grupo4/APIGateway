@@ -58,7 +58,7 @@ const { gql } = require('apollo-server');
 const inmueblesTypeDef = gql`
 	type inmueble {
 		id: Int!
-      likes: Int
+      	likes: Int
 		titulo: String!
 		direccion: String!
 		ciudad: String!
@@ -90,7 +90,7 @@ const inmueblesTypeDef = gql`
 	}
 
 	input inmuebleInput {
-      likes: Int
+      	likes: Int
 		titulo: String!
 		direccion: String!
 		ciudad: String!
