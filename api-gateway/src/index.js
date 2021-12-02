@@ -3,8 +3,8 @@ const typeDefs = require('./typeDefs');
 const resolvers = require('./resolvers');
 const AuthAPI = require('./dataSources/authAPI');
 const authentication = require('./utils/authentications')
-const InmuebleApi = require('./dataSources/inmueblesAPI');
-//const authentication = require('./dataSources/likesApi');
+const InmuebleAPI = require('./dataSources/inmueblesAPI');
+const LikesAPI = require('./dataSources/likesAPI');
 
 const server = new ApolloServer({
     context: authentication,
@@ -12,7 +12,8 @@ const server = new ApolloServer({
     resolvers,
     dataSources: () => ({
         authAPI: new AuthAPI(),
-        inmueblesApi: new InmuebleApi()
+        inmueblesAPI: new InmuebleAPI(),
+        likesAPI: new LikesAPI()
     }),
     introspection: true,
     playground: true
