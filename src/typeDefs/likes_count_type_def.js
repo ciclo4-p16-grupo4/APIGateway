@@ -1,12 +1,12 @@
 const { gql } = require('apollo-server');
 const likescountTypeDefs = gql`
     type likescount {
-        inmuebleId: Int!
-        likesCount: Int!
+        inmueble_id: Int!
+        likes_count: Int!
     }
 
     extend type Query {
-        likecount(inmuebleId: Int!): likescount
+        likecount(inmueble_id: Int!): likescount
         
     }    
 `;

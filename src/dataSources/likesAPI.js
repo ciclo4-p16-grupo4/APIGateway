@@ -1,7 +1,7 @@
 const { RESTDataSource } = require('apollo-datasource-rest');
 const serverConfig = require('../server');
 
-class LikesApi extends RESTDataSource{
+class LikesAPI extends RESTDataSource{
     constructor(){
         super();
         this.baseURL = serverConfig.likes_api_url;
@@ -32,4 +32,4 @@ class LikesApi extends RESTDataSource{
         return await this.delete(`/likes/${likeId}`);
     }
 }
-module.exports = LikesApi;
+module.exports = LikesAPI;

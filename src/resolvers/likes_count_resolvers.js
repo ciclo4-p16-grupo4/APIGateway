@@ -1,9 +1,9 @@
 const likescountResolver = {
     Query:{
-        likecount: async(_, {inmuebleId}, {dataSources, userIdToken}) => {
+        likecount: async(_, {inmueble_id}, {dataSources, userIdToken}) => {
             //usernameToken = (await dataSources.authAPI.getUser(userIdToken)).username
             //if (username == usernameToken)
-                return await dataSources.likesAPI.getLikesCountByInmueble(inmuebleId);
+                return await dataSources.likesAPI.getLikesCountByInmueble(inmueble_id);
             //else
               //  return null;
         },

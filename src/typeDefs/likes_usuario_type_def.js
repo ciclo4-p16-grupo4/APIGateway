@@ -3,25 +3,25 @@ const { gql } = require('apollo-server');
 const likesUserTypeDefs = gql`
    type likeuser {
       id: String!
-      userId: Int!
-      inmuebleId: Int!
+      user_id: Int!
+      inmueble_id: Int!
       creado: String!
    }
-   
-   input likeuserInput {
-      userId: Int!
-      inmuebleId: Int!        
-   }
 
+   input likeuserInput {
+      user_id: Int!
+      inmueble_id: Int!        
+   }
+   
    extend type Query {
-      likeByUser(userId: Int!): [likeuser]
-      likesByInmueble(inmuebleId: Int!): [likeuser]
+      likeByUser(user_id: Int!): [likeuser]
+      likesByInmueble(inmueble_id: Int!): [likeuser]
       likesAll: [likeuser]
    }
 
    extend type Mutation {
       createLike(like: likeuserInput!): likeuser
-      deleteLike(likeId: Int!): likeuser
+      deleteLike(likeId: Int!): String!
    }
 `;
 module.exports = likesUserTypeDefs;
