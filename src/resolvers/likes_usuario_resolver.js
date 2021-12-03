@@ -27,11 +27,21 @@ const likesUserResolver = {
     },
     Mutation: {
         createLike: async (_, {like}, {dataSources, userIdToken}) => {
-            if (userIdToken == like.user_id)
-                return await dataSources.likesAPI.createLike(like);
-            else
-                throw new ApolloError("NO AUTORIZADO", 401)
+
+            const inmueble = await dataSources.inmueblesAPI.getInmueble(like.inmueble_id)
             
+            
+
+            if (userIdToken == like.user_id){
+                const createdLike = await dataSources.likesAPI.createLike(like);
+
+                const likes = await dataSources.likesAPI.getLikesCountByInmueble(inmueble.id)
+                await dataSources.inmueblesAPI.updateInmueble({likes: likes.likes_count}, inmueble.id)
+                
+                return createdLike
+            }else{
+                throw new ApolloError("NO AUTORIZADO", 401)
+            }
         },
 
         deleteLike: async (_, {likeId}, {dataSources, userIdToken}) => {
