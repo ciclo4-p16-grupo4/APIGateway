@@ -17,7 +17,7 @@ const inmueblesTypeDef = gql`
 		contrato: String!
 		descripcion: String!
 		coordenadas: String!
-		source_mapas: String!
+		source_mapas: String
 		imagenes: [imagenes]!
 	}
 	

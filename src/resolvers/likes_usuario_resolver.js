@@ -3,7 +3,11 @@ const { ApolloError } = require('apollo-server')
 const likesUserResolver = {
     Query: {
         likesByInmueble: async (_, { inmueble_id }, { dataSources, userIdToken }) => {
-            return await dataSources.likesAPI.getLikesByInmueble(inmueble_id);
+
+            if (userIdToken == user_id)
+                return await dataSources.likesAPI.getLikesByInmueble(inmueble_id);
+            else
+                throw new ApolloError("NO AUTORIZADO", 401)
         },
 
         likeByUser: async (_, {user_id}, {dataSources, userIdToken}) => {
