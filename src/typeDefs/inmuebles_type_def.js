@@ -17,6 +17,7 @@ const inmueblesTypeDef = gql`
 		contrato: String!
 		descripcion: String!
 		coordenadas: String!
+		source_mapas: String!
 		imagenes: [imagenes]!
 	}
 	
@@ -55,6 +56,7 @@ const inmueblesTypeDef = gql`
 		contrato: String!
 		descripcion: String!
 		coordenadas: String!
+		source_mapas: String!
 		imagenes: [inputImagenes]
 	}
 	input updateInmuebleInput {
@@ -72,6 +74,7 @@ const inmueblesTypeDef = gql`
 		contrato: String
 		descripcion: String
 		coordenadas: String
+		source_mapas: String
 		imagenes: [inputImagenes]
 	}
 
